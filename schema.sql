@@ -41,3 +41,7 @@ INSERT INTO department (name) values ("Customer Support");
 
 INSERT INTO role (title, salary, departmentId) values ("Sales Agent", 35000, 1);
 INSERT into employees (firstName, lastName, roleId, managerId) values ('Linda', 'Smith', 1, null);
+
+--Realized the managerId was not labeled as a foreign key.
+ALTER TABLE employees
+ADD foreign key (managerId) references employees(employeeId);
